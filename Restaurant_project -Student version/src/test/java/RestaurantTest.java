@@ -6,6 +6,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Arrays;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -77,7 +78,10 @@ class RestaurantTest {
     @Test
     public void order_total_from_menu_for_selected_items(){
         int orderTotal;
-        List<Item> selectedItems=null;
+        restaurant.displayDetails();
+        List<String> selectedItems= Arrays.asList("Sweet corn soup","Vegetable lasagne");
         orderTotal=restaurant.getOrderTotal(selectedItems);
+        assertEquals(388,orderTotal);
     }
+
 }
